@@ -1,0 +1,24 @@
+﻿<Window x:Class="HospitalManagement.ServicesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление услугами" Height="450" Width="800">
+    <Grid>
+        <!-- Таблица услуг -->
+        <DataGrid x:Name="ServicesDataGrid" AutoGenerateColumns="False" Margin="10,10,10,72" 
+                  CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
+                <DataGridTextColumn Header="Название услуги" Binding="{Binding Name}" Width="200" />
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat=C}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Кнопки управления -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Добавить" Click="AddButton_Click" Margin="5" />
+            <Button Content="Редактировать" Click="EditButton_Click" Margin="5" />
+            <Button Content="Удалить" Click="DeleteButton_Click" Margin="5" />
+            <Button Content="Экспорт в PDF" Click="ExportToPdfButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
